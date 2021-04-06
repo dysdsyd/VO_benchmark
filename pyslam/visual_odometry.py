@@ -196,6 +196,7 @@ class VisualOdometry(object):
         if img.ndim>2:
             img = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)             
         # check coherence of image size with camera settings 
+#         print(img.ndim, img.shape[0], self.cam.height, img.shape[1], self.cam.width)
         assert(img.ndim==2 and img.shape[0]==self.cam.height and img.shape[1]==self.cam.width), "Frame: provided image has not the same size as the camera model or image is not grayscale"
         self.cur_image = img
         # manage and check stage 

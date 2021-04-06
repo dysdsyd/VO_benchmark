@@ -27,6 +27,21 @@ import os
 import yaml
 import numpy as np
 
+config_map = {
+    '00': 'settings/KITTI00-02.yaml',
+    '01': 'settings/KITTI00-02.yaml',
+    '02': 'settings/KITTI00-02.yaml',
+    '03': 'settings/KITTI03.yaml',
+    '04': 'settings/KITTI04-12.yaml',
+    '05': 'settings/KITTI04-12.yaml',
+    '06': 'settings/KITTI04-12.yaml',
+    '07': 'settings/KITTI04-12.yaml',
+    '08': 'settings/KITTI04-12.yaml',
+    '09': 'settings/KITTI04-12.yaml',
+    '10': 'settings/KITTI04-12.yaml',
+    '11': 'settings/KITTI04-12.yaml',
+    '12': 'settings/KITTI04-12.yaml',
+}
 
 # N.B.: this file must stay in the root folder of the repository 
 
@@ -40,13 +55,14 @@ class Config(object):
     '''
     Config is used for getting libs settings (from config.ini) and camera settings from a yaml file 
     '''
-    def __init__(self):
+    def __init__(self, folder='00'):
         self.root_folder = __location__
         self.config_file = 'config.ini'
         self.config_parser = configparser.ConfigParser()
         self.cam_settings = None
         self.dataset_settings = None
         self.dataset_type = None
+        self.folder = folder
         #self.current_path = os.getcwd()
         #print('current path: ', self.current_path)
 
@@ -56,7 +72,8 @@ class Config(object):
         
         self.get_dataset_settings()
         self.get_cam_settings()
-
+        self.dataset_settings['name'] = self.folder
+    
     # read core lib paths from config.ini and set sys paths
     def set_core_lib_paths(self):
         self.core_lib_paths = self.config_parser['CORE_LIB_PATHS']
@@ -96,10 +113,14 @@ class Config(object):
     # get camera settings
     def get_cam_settings(self):
         self.cam_settings = None
-        self.settings_doc = __location__ + '/' + self.config_parser[self.dataset_type]['cam_settings']
+#         print(self.config_parser[self.dataset_type]['cam_settings'])
+#         self.settings_doc = __location__ + '/' + self.config_parser[self.dataset_type]['cam_settings']
+        self.settings_doc = __location__ + '/' + config_map[self.folder]
+#         print(self.settings_doc)
         if(self.settings_doc is not None):
             with open(self.settings_doc, 'r') as stream:
                 try:
+                    
                     self.cam_settings = yaml.load(stream, Loader=yaml.FullLoader)
                 except yaml.YAMLError as exc:
                     print(exc)
