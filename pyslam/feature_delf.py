@@ -87,7 +87,7 @@ delf_projection_matrix_path = delf_base_path + 'examples/parameters/delf_gld_201
 
 
 
-kVerbose = True   
+kVerbose = False   
 
         
         

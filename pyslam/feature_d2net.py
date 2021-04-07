@@ -49,7 +49,7 @@ from lib.pyramid import process_multiscale
 
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 # convert matrix of pts into list of keypoints

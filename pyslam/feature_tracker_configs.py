@@ -58,101 +58,359 @@ class FeatureTrackerConfigs(object):
     # XX is test ID number
     # YY is detector name
     # ZZ is descriptor name
-    
-    # there are 36 combinations + some deep learning
-    
-    ## SHI-TOMASE detector + 6 descriptors
-    T01_SHI_NONE = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.NONE, 
-                    tracker_type = FeatureTrackerTypes.LK); # done
-    
-    T02_SHI_SIFT = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.SIFT, 
-                    match_ratio_test = kRatioTest,                         
-                    tracker_type = kTrackerType); # done
-    
-    T03_SHI_SURF = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.SURF, 
-                    match_ratio_test = kRatioTest,                         
-                    tracker_type = kTrackerType); # done
-    
-    T04_SHI_ORB2 = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.ORB2, 
-                    match_ratio_test = kRatioTest,                        
-                    tracker_type = kTrackerType); # done
-    
-    T05_SHI_BRISK = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.BRISK,
-                    match_ratio_test = kRatioTest,                           
-                    tracker_type = kTrackerType); # done
-    
-    T06_SHI_TFEAT = dict(num_features=kNumFeatures,
-                    num_levels = 3,
-                    detector_type = FeatureDetectorTypes.SHI_TOMASI,
-                    descriptor_type = FeatureDescriptorTypes.TFEAT,
-                    match_ratio_test = kRatioTest,                           
-                    tracker_type = kTrackerType); # done
-    
-    
-    ## FAST detector + 6 descriptors
-    T07_FAST_NONE = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST, 
-                    descriptor_type = FeatureDescriptorTypes.NONE, 
-                    tracker_type = FeatureTrackerTypes.LK); # done
-    
-    T08_FAST_SIFT = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST, 
-                    descriptor_type = FeatureDescriptorTypes.SIFT, 
-                    match_ratio_test = kRatioTest,                         
-                    tracker_type = kTrackerType); # done
-    
-    T09_FAST_SURF = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST,
-                    descriptor_type = FeatureDescriptorTypes.SURF, 
-                    match_ratio_test = kRatioTest,                         
-                    tracker_type = kTrackerType); # done
-    
-    T10_FAST_ORB2 = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST,
-                    descriptor_type = FeatureDescriptorTypes.ORB2, 
-                    match_ratio_test = kRatioTest,                        
-                    tracker_type = kTrackerType); # done
-    
-    T11_FAST_BRISK = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST,
-                    descriptor_type = FeatureDescriptorTypes.BRISK,
-                    match_ratio_test = kRatioTest,                           
-                    tracker_type = kTrackerType); # done
-    
-    T12_FAST_TFEAT = dict(num_features=kNumFeatures,  
-                    num_levels = 8, 
-                    scale_factor = 1.2,
-                    detector_type = FeatureDetectorTypes.FAST,
-                    descriptor_type = FeatureDescriptorTypes.TFEAT,
-                    match_ratio_test = kRatioTest,                           
-                    tracker_type = kTrackerType); # done
-    
+    # there are 42 combinations + some deep learning
 
+
+    test_configs = { 
+        'T01_SHI_NONE':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T02_SHI_SIFT':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T03_SHI_SURF':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T04_SHI_ORB2':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T05_SHI_BRISK':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T06_SHI_TFEAT':dict(num_features=kNumFeatures,
+                        num_levels = 3,
+                        detector_type = FeatureDetectorTypes.SHI_TOMASI,
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+
+        ## FAST detector + 6 descriptors
+        'T07_FAST_NONE':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T08_FAST_SIFT':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T09_FAST_SURF':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST,
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T10_FAST_ORB2':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T11_FAST_BRISK':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST,
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T12_FAST_TFEAT':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.FAST,
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        ## SIFT detector + 6 descriptors
+        'T13_SIFT_NONE':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T14_SIFT_SIFT':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T15_SIFT_SURF':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T16_SIFT_ORB2':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T17_SIFT_BRISK':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T18_SIFT_TFEAT':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT, 
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        ## SURF detector + 6 descriptors
+        'T19_SURF_NONE':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T20_SURF_SIFT':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T21_SURF_SURF':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T22_SURF_ORB2':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T23_SURF_BRISK':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T24_SURF_TFEAT':dict(num_features=kNumFeatures,
+                        num_levels = 8,
+                        detector_type = FeatureDetectorTypes.SURF, 
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        ## ORB2 detector + 6 descriptors
+        'T25_ORB2_NONE':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T26_ORB2_SIFT':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T27_ORB2_SURF':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2,
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T28_ORB2_ORB2':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T29_ORB2_BRISK':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2,
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T30_ORB2_TFEAT':dict(num_features=kNumFeatures,  
+                        num_levels = 8, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.ORB2,
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        ## BRISK detector + 6 descriptors
+        'T31_BRISK_NONE':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T32_BRISK_SIFT':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T33_BRISK_SURF':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK,
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T34_BRISK_ORB2':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T35_BRISK_BRISK':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK,
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T36_BRISK_TFEAT':dict(num_features=kNumFeatures,  
+                        num_levels = 4, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.BRISK,
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        ## KEYNET detector + 6 descriptors
+        'T37_KEYNET_NONE':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET, 
+                        descriptor_type = FeatureDescriptorTypes.NONE, 
+                        tracker_type = FeatureTrackerTypes.LK), # done
+
+        'T38_KEYNET_SIFT':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET, 
+                        descriptor_type = FeatureDescriptorTypes.SIFT, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T39_KEYNET_SURF':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET,
+                        descriptor_type = FeatureDescriptorTypes.SURF, 
+                        match_ratio_test = kRatioTest,                         
+                        tracker_type = kTrackerType), # done
+
+        'T40_KEYNET_ORB2':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+
+        'T41_KEYNET_BRISK':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET,
+                        descriptor_type = FeatureDescriptorTypes.BRISK,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+        'T42_KEYNET_TFEAT':dict(num_features=kNumFeatures,  
+                        num_levels = 1, 
+                        scale_factor = 1.2,
+                        detector_type = FeatureDetectorTypes.KEYNET,
+                        descriptor_type = FeatureDescriptorTypes.TFEAT,
+                        match_ratio_test = kRatioTest,                           
+                        tracker_type = kTrackerType), # done
+
+
+        # Deep learning features with 1-1 map (cannot combine with others)
+        # T50 - T53 has some template, and we can use as is.  
+        'T50_SUPERPOINT':dict(num_features=kNumFeatures, 
+                          num_levels = 1, 
+                          scale_factor = 1.2,
+                          detector_type = FeatureDetectorTypes.SUPERPOINT, 
+                          descriptor_type = FeatureDescriptorTypes.SUPERPOINT, 
+                          match_ratio_test = kRatioTest,                               
+                          tracker_type = kTrackerType),
+
+        'T51_CONTEXTDESC':dict(num_features=kNumFeatures,                   
+                           num_levels = 1,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.CONTEXTDESC, 
+                           descriptor_type = FeatureDescriptorTypes.CONTEXTDESC, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+
+        'T52_KEYNET':dict(num_features=kNumFeatures,                   
+                           num_levels = 1,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.KEYNET, 
+                           descriptor_type = FeatureDescriptorTypes.KEYNET, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+
+        'T53_DISK':dict(num_features=kNumFeatures,                   
+                           num_levels = 1,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.DISK, 
+                           descriptor_type = FeatureDescriptorTypes.DISK, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+        }
+
+    
     
     # =====================================
     # LK trackers (these can only be used with VisualOdometry() ... at the present time)

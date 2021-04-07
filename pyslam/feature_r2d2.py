@@ -38,7 +38,7 @@ import argparse
 from utils_sys import Printer 
 
 
-kVerbose = True 
+kVerbose = False 
 
 
 def load_network(model_fn): 

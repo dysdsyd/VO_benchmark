@@ -71,7 +71,7 @@ if kModelFolderPath not in sys.path:
     sys.path.append(kModelFolderPath)
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 def build_networks(lfnet_config, photo, is_training):

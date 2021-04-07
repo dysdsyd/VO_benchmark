@@ -37,7 +37,7 @@ import numpy as np
 from utils_features import extract_patches_tensor, extract_patches_array, extract_patches_array_cpp
 
 
-kVerbose = True 
+kVerbose = False 
 
 
 class L2Norm(nn.Module):

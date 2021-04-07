@@ -44,7 +44,7 @@ from utils_tf import set_tf_logging
 from utils_sys import Printer, print_options
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 def build_keynet_config(keynet_base_path):

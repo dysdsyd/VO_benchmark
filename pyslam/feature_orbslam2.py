@@ -27,7 +27,7 @@ from orbslam2_features import ORBextractor
 
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 # interface for pySLAM 

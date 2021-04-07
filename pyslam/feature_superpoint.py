@@ -31,7 +31,7 @@ from threading import RLock
 from utils_sys import Printer 
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 class SuperPointOptions:

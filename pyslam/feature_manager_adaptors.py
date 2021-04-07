@@ -31,7 +31,7 @@ from utils_sys import Printer
 from pyramid import Pyramid, PyramidType
 
 
-kVerbose = True   
+kVerbose = False   
 
 kAdaptorNumRowDivs = 5 #2, 3
 kAdaptorNumColDivs = 5 #2, 3

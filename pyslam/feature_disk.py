@@ -43,7 +43,7 @@ from torch_dimcheck import dimchecked
 from disk import DISK, Features
 
 
-kVerbose = True     
+kVerbose = False     
 
 class Image:
     def __init__(self, bitmap: ['C', 'H', 'W'], fname: str, orig_shape=None):

@@ -40,7 +40,7 @@ import torch.backends.cudnn as cudnn
 from utils_features import extract_patches_array, extract_patches_array_cpp
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 # interface for pySLAM

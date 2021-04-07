@@ -33,7 +33,7 @@ from utils_features import extract_patches_tensor, extract_patches_array, extrac
 
 
 
-kVerbose = True   
+kVerbose = False   
 
 
 # interface for pySLAM
