@@ -112,7 +112,7 @@ class D2NetFeature2D:
     
     def compute_kps_des(self, image):   
         with self.lock:         
-            print('D2Net image shape:',image.shape)               
+#             print('D2Net image shape:',image.shape)               
             if len(image.shape) == 2:
                     image = image[:, :, np.newaxis]
                     image = np.repeat(image, 3, -1)
@@ -132,7 +132,7 @@ class D2NetFeature2D:
 
             fact_i = image.shape[0] / resized_image.shape[0]
             fact_j = image.shape[1] / resized_image.shape[1]
-            print('scale factors: {}, {}'.format(fact_i,fact_j))
+#             print('scale factors: {}, {}'.format(fact_i,fact_j))
 
             input_image = preprocess_image(
                 resized_image,

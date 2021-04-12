@@ -16,6 +16,7 @@
 * You should have received a copy of the GNU General Public License
 * along with PYSLAM. If not, see <http://www.gnu.org/licenses/>.
 """
+import pdb
 import sys 
 import math 
 from enum import Enum
@@ -156,6 +157,7 @@ class FeatureManager(object):
         opencv_major =  int(cv2.__version__.split('.')[0])
         opencv_minor =  int(cv2.__version__.split('.')[1])
         if opencv_major == 3:
+            print('there')
             SIFT_create  = import_from('cv2.xfeatures2d','SIFT_create') 
             SURF_create  = import_from('cv2.xfeatures2d','SURF_create')
             FREAK_create  = import_from('cv2.xfeatures2d','FREAK_create')          
@@ -174,6 +176,7 @@ class FeatureManager(object):
             VGG_create = import_from('cv2','xfeatures2d_VGG','create')     
             BEBLID_create = import_from('cv2','xfeatures2d','BEBLID_create')       
         elif opencv_major == 4 and opencv_minor >= 5: 
+            print('here')
             SIFT_create  = import_from('cv2','SIFT_create') 
             SURF_create  = import_from('cv2.xfeatures2d','SURF_create')
             FREAK_create  = import_from('cv2.xfeatures2d','FREAK_create')               
@@ -191,6 +194,7 @@ class FeatureManager(object):
             VGG_create = import_from('cv2','xfeatures2d_VGG','create')
             BEBLID_create = import_from('cv2','xfeatures2d','BEBLID_create')              
         else:
+            print('pere')
             SIFT_create  = import_from('cv2.xfeatures2d','SIFT_create') 
             SURF_create  = import_from('cv2.xfeatures2d','SURF_create')
             FREAK_create  = import_from('cv2.xfeatures2d','FREAK_create')               
@@ -502,7 +506,8 @@ class FeatureManager(object):
                 #self.num_levels_descriptor = 1 #self.num_levels
                 pass 
             # actual descriptor initialization 
-            if self.descriptor_type == FeatureDescriptorTypes.SIFT or self.descriptor_type == FeatureDescriptorTypes.ROOT_SIFT:                      
+            if self.descriptor_type == FeatureDescriptorTypes.SIFT or self.descriptor_type == FeatureDescriptorTypes.ROOT_SIFT:
+#                 pdb.set_trace()
                 sift = self.SIFT_create(nOctaveLayers=3)   
                 if self.descriptor_type == FeatureDescriptorTypes.ROOT_SIFT:            
                     self._feature_descriptor = RootSIFTFeature2D(sift)         

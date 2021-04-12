@@ -158,6 +158,13 @@ class FeatureTrackerConfigs(object):
                         descriptor_type = FeatureDescriptorTypes.NONE, 
                         tracker_type = FeatureTrackerTypes.LK), # done
 
+        'TXX_SIFT_ORB2':dict(num_features=kNumFeatures,  
+                        detector_type = FeatureDetectorTypes.SIFT,
+                        descriptor_type = FeatureDescriptorTypes.ORB2, 
+                        match_ratio_test = kRatioTest,                        
+                        tracker_type = kTrackerType), # done
+        
+        
         'T14_SIFT_SIFT':dict(num_features=kNumFeatures,  
                         detector_type = FeatureDetectorTypes.SIFT, 
                         descriptor_type = FeatureDescriptorTypes.SIFT, 
@@ -408,6 +415,64 @@ class FeatureTrackerConfigs(object):
                            descriptor_type = FeatureDescriptorTypes.DISK, 
                            match_ratio_test = kRatioTest,
                            tracker_type = kTrackerType),
+        
+        ## New DL features
+        'T54_R2D2_R2D2':dict(num_features=kNumFeatures,                   
+                           num_levels = 1,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.R2D2, 
+                           descriptor_type = FeatureDescriptorTypes.R2D2, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+
+        'T55_LFNET_LFNET':dict(num_features=kNumFeatures,                   
+                           num_levels = 1,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.LFNET, 
+                           descriptor_type = FeatureDescriptorTypes.LFNET, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+
+        'T56_ORB2_VGG':dict(num_features=kNumFeatures,                   
+                           num_levels = 8,                                  
+                           scale_factor = 1.2,                              
+                           detector_type = FeatureDetectorTypes.ORB2, 
+                           descriptor_type = FeatureDescriptorTypes.VGG, 
+                           match_ratio_test = kRatioTest,
+                           tracker_type = kTrackerType),
+
+        # orb and DL feats
+        'T57_ORB2_HARDNET': dict(num_features=kNumFeatures, 
+                             num_levels = 8, 
+                             scale_factor = 1.2, 
+                             detector_type = FeatureDetectorTypes.ORB2, 
+                             descriptor_type = FeatureDescriptorTypes.HARDNET, 
+                             match_ratio_test = kRatioTest,                        
+                             tracker_type = kTrackerType),    
+
+        'T58_ORB2_SOSNET': dict(num_features=kNumFeatures, 
+                            num_levels = 8, 
+                            scale_factor = 1.2, 
+                            detector_type = FeatureDetectorTypes.ORB2, 
+                            descriptor_type = FeatureDescriptorTypes.SOSNET, 
+                            match_ratio_test = kRatioTest,                        
+                            tracker_type = kTrackerType),   
+
+        'T59_ORB2_L2NET': dict(num_features=kNumFeatures, 
+                           num_levels = 8, 
+                           scale_factor = 1.2, 
+                           detector_type = FeatureDetectorTypes.ORB2, 
+                           descriptor_type = FeatureDescriptorTypes.L2NET, 
+                           match_ratio_test = kRatioTest,                        
+                           tracker_type = kTrackerType),
+
+        'T60_D2NET_D2NET':dict(num_features=kNumFeatures,                   
+                   num_levels = 1,                                  
+                   scale_factor = 1.2,                              
+                   detector_type = FeatureDetectorTypes.D2NET, 
+                   descriptor_type = FeatureDescriptorTypes.D2NET, 
+                   match_ratio_test = kRatioTest,
+                   tracker_type = kTrackerType),
         }
 
     
