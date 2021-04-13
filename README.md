@@ -54,6 +54,8 @@ $ cd src
 $ python eval_vo.py
 ```
 This will calculate the  Average Trajectory Error (ATE) and Releative Pose Error (RPE) for all the configurations & trajectory sequences. The results can be found in `data/output` folder
+
+
 3. Collate the ATE and RPE into a table by running the following:
 ```
 $ cd src
