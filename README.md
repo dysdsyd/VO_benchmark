@@ -30,8 +30,8 @@ Once installed, there are two steps to generate the Visual Odometry (VO) results
 1. Create the descriptor and detector configurations in the `test_configs` dictionary present in `pyslam/feature_tracker_configs.py` 
 2. Run VO experiment over all the trajectory sequences by:
 ```
-cd src
-python run_vo.py
+$ cd src
+$ python run_vo.py
 ```
 The ouput will be dumped into the `data/dataset/results` folder.
 
