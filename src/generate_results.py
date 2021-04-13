@@ -22,7 +22,7 @@ import numpy as np, glob, os, csv, xlsxwriter, pandas as pd;
 
 class read_txt():
     def __init__(self):
-        writer = pd.ExcelWriter('exported_data.xlsx', engine = 'xlsxwriter');
+        writer = pd.ExcelWriter('../data/output/exported_data.xlsx', engine = 'xlsxwriter');
 
         # load ground truth
         self.load_gt(); 
