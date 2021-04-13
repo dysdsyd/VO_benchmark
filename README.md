@@ -1,6 +1,6 @@
 # VO_benchmark
-[Impact of Image Feature Detector and Descriptor Choice on Visual Odometry]()   
-[EECS 568: Mobile Robotics Final Project]()
+[**Impact of Image Feature Detector and Descriptor Choice on Visual Odometry**]()   
+[EECS 568](): Mobile Robotics Final Project
 
 ## Team Members:
 Chunkai Yao, [Danish Syed](https://dysdsyd.github.io), Joseph Kim Peerayos Pongsachai, Teerachart Soratana
