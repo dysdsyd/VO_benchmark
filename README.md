@@ -40,4 +40,4 @@ The ouput will be dumped into the `data/dataset/results` folder.
 
 
 ## Acknowledgements
-The autors would like to thanks the [luigifreda/pyslam](https://github.com/luigifreda/pyslam) repository for collating multiple Visual Odometry feature detectors and descriptors.
+The autors would like to thank the [luigifreda/pyslam](https://github.com/luigifreda/pyslam) repository for collating multiple Visual Odometry feature detectors and descriptors.
