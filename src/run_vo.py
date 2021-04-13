@@ -21,33 +21,28 @@ from feature_matcher import feature_matcher_factory, FeatureMatcherTypes
 from tqdm import tqdm
 from feature_tracker_configs import FeatureTrackerConfigs
 
-# parser = argparse.ArgumentParser(description='Run VO')
-# parser.add_argument('--idx', type=list, default=[0], help='experimet name')
-
-# args = parser.parse_args()
-# exp_name = args.n
-
-
-
-model_config = FeatureTrackerConfigs.test_configs
-
+# get all the data for evaluation
 folders = os.listdir('../data/dataset/sequences/')
 folders.sort()
 
-# model_list = list(model_config.keys())[47:]
-# model_list = ['T57_ORB2_HARDNET', 'T58_ORB2_SOSNET', 'T59_ORB2_L2NET']
-model_list = ['TXX_SIFT_ORB2']
+# get all the test configs
+model_config = FeatureTrackerConfigs.test_configs
+model_list = list(model_config.keys())
 print(list(model_list))      
-      
+
+# iterate over all the configurations to run the VO experiment 
 for idx, exp_name in enumerate(model_list):
     print('Experiment: ', exp_name)
     res_base_path = os.path.join('../data/results/', exp_name)
     if not os.path.exists(res_base_path):
+        # check for errors and skip
         try:
+            # iterate over all the trajecory sequences
             for f in folders:
                 print('Folder: ',f)
                 config = Config(f)
-
+                
+                # get the data for VO
                 dataset = dataset_factory(config.dataset_settings)
                 groundtruth = groundtruth_factory(config.dataset_settings)
 
@@ -59,20 +54,12 @@ for idx, exp_name in enumerate(model_list):
                 num_features=2000  # how many features do you want to detect and track?
 
                 # select your tracker configuration (see the file feature_tracker_configs.py) 
-                # LK_SHI_TOMASI, LK_FAST
-                # SHI_TOMASI_ORB, FAST_ORB, ORB, BRISK, AKAZE, FAST_FREAK, SIFT, ROOT_SIFT, SURF, SUPERPOINT, FAST_TFEAT
                 tracker_config = model_config[exp_name]
                 tracker_config['num_features'] = num_features
 
                 feature_tracker = feature_tracker_factory(**tracker_config)
                 # create visual odometry object 
                 vo = VisualOdometry(cam, groundtruth, feature_tracker)
-
-                # todo: add the trajectory visualization
-                traj_img_size = 800
-                traj_img = np.zeros((traj_img_size, traj_img_size, 3), dtype=np.uint8)
-                half_traj_img_size = int(0.5*traj_img_size)
-                draw_scale = 1
 
                 # second loop for iterating over all the frame
                 result = []  
