@@ -2,7 +2,7 @@
 This repository holds all the code for our [EECS 568: Mobile Robotics]() final project
 
 [**VO_benchmark: Impact of Image Feature Detector and Descriptor Choice on Visual Odometry**]()   
-Chunkai Yao, [Danish Syed](https://dysdsyd.github.io), Joseph Kim Peerayos Pongsachai, Teerachart Soratana
+Chunkai Yao, [Danish Syed](https://dysdsyd.github.io), Joseph Kim, Peerayos Pongsachai, Teerachart Soratana
 
 ## Installation
 Please follow the instructions from [pySLAM v2](https://github.com/luigifreda/pyslam/blob/master/CONDA.md) repository. Our implementation uses the [conda environment installation](https://github.com/luigifreda/pyslam/blob/master/CONDA.md).
