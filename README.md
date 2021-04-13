@@ -1,8 +1,7 @@
 # VO_benchmark
-[**VO_benchmark: Impact of Image Feature Detector and Descriptor Choice on Visual Odometry**]()   
-[EECS 568](): Mobile Robotics Final Project
+This repository holds all the code for our [EECS 568: Mobile Robotics]() final project
 
-## Team Members:
+[**VO_benchmark: Impact of Image Feature Detector and Descriptor Choice on Visual Odometry**]()   
 Chunkai Yao, [Danish Syed](https://dysdsyd.github.io), Joseph Kim Peerayos Pongsachai, Teerachart Soratana
 
 ## Installation
