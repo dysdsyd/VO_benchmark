@@ -25,7 +25,7 @@ We used the first 10 (00-09) trajectory sequences from KITTI dataset for evlauti
 ## Usage Instructions
 Once installed, there are two steps to generate the Visual Odometry (VO) results on the KITTI dataset. 
 
-#### Running the VO for multiple Detector and Descriptor Combinations
+### Running the VO for multiple Detector and Descriptor Combinations
 1. Create the descriptor and detector configurations in the `test_configs` dictionary present in `pyslam/feature_tracker_configs.py` 
 2. Run VO experiment over all the trajectory sequences by:
 ```
@@ -46,7 +46,7 @@ The ouput will be dumped into the `data/results` folder with the following direc
         ├── 09.txt
 ```
 
-#### Evaluating the VO for multiple Detector and Descriptor Combinations
+### Evaluating the VO for multiple Detector and Descriptor Combinations
 1. Install the [evo](https://github.com/MichaelGrupp/evo) package for evaluating Visual Odometery
 2. Run the evaluation using the evo package by running the following:
 ```
