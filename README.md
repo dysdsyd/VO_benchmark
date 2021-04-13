@@ -9,17 +9,17 @@ Please follow the instructions from [pySLAM v2](https://github.com/luigifreda/py
 
 
 ## Datasets
-We used the first 10 (00-10) trajectory sequences from KITTI dataset for evlaution. Download the [KITTI odometry data set (grayscale, 22 GB)](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) and store it in the `data/dataset` folder with the following directory structure.
+We used the first 10 (00-09) trajectory sequences from KITTI dataset for evlaution. Download the [KITTI odometry data set (grayscale, 22 GB)](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) and store it in the `data/dataset` folder with the following directory structure.
 ```
 ├── data/dataset
     ├── sequences
         ├── 00.txt
         ...
-        ├── 10.txt
+        ├── 09.txt
     ├── poses
         ├── 00.txt
             ...
-        ├── 10.txt
+        ├── 09.txt
 ```
 
 ## Usage Instructions
@@ -39,11 +39,11 @@ The ouput will be dumped into the `data/results` folder with the following direc
     ├── T01_SHI_NONE
         ├── 00.txt
         ...
-        ├── 10.txt
+        ├── 09.txt
     ├── T60_D2NET_D2_NET
         ├── 00.txt
             ...
-        ├── 10.txt
+        ├── 09.txt
 ```
 
 #### Evaluating the VO for multiple Detector and Descriptor Combinations
