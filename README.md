@@ -1,4 +1,4 @@
-# Benchmarking the Impact of the Image Feature Detector and Descriptor Choice on Visual Odometry
+# The Impact of the Image Feature Detector and Descriptor Choice on Visual Odometry
 EECS 568: Mobile Robotics Final Project
 
 ## Team Members:
