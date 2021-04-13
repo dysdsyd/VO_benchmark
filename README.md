@@ -65,5 +65,8 @@ $ python generate_results.py
 ```
 Resulting table is dumped into an excel file as `data/output/exported_data.xlsx`
 
+## Troubleshooting
+Use `src/run_vo.ipynb` to trobuleshoot issues with any configuration.
+
 ## Acknowledgements
 The autors would like to thank the [luigifreda/pyslam](https://github.com/luigifreda/pyslam) repository for collating multiple Visual Odometry feature detectors and descriptors.
