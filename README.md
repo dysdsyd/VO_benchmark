@@ -13,31 +13,53 @@ We used the first 10 (00-10) trajectory sequences from KITTI dataset for evlauti
 ```
 ├── data/dataset
     ├── sequences
-        ├── 00
+        ├── 00.txt
         ...
-        ├── 21
+        ├── 10.txt
     ├── poses
         ├── 00.txt
             ...
         ├── 10.txt
-
 ```
 
 ## Usage Instructions
 Once installed, there are two steps to generate the Visual Odometry (VO) results on the KITTI dataset. 
 
-#### (1) Running the VO for multiple Detector and Descriptor Combinations
+#### Running the VO for multiple Detector and Descriptor Combinations
 1. Create the descriptor and detector configurations in the `test_configs` dictionary present in `pyslam/feature_tracker_configs.py` 
 2. Run VO experiment over all the trajectory sequences by:
 ```
 $ cd src
 $ python run_vo.py
 ```
-The ouput will be dumped into the `data/dataset/results` folder.
 
-#### (2) Evaluating the VO for multiple Detector and Descriptor Combinations
-[WIP]
+The ouput will be dumped into the `data/results` folder with the following directory structure:
+```
+├── data/results
+    ├── T01_SHI_NONE
+        ├── 00.txt
+        ...
+        ├── 10.txt
+    ├── T60_D2NET_D2_NET
+        ├── 00.txt
+            ...
+        ├── 10.txt
+```
 
+#### Evaluating the VO for multiple Detector and Descriptor Combinations
+1. Install the [evo](https://github.com/MichaelGrupp/evo) package for evaluating Visual Odometery
+2. Run the evaluation using the evo package by running the following:
+```
+$ cd src
+$ python eval_vo.py
+```
+This will calculate the  Average Trajectory Error (ATE) and Releative Pose Error (RPE) for all the configurations & trajectory sequences. The results can be found in `data/output` folder
+3. Collate the ATE and RPE into a table by running the following:
+```
+$ cd src
+$ python generate_results.py
+```
+Resulting table is dumped into an excel file as `data/output/exported_data.xlsx`
 
 ## Acknowledgements
 The autors would like to thank the [luigifreda/pyslam](https://github.com/luigifreda/pyslam) repository for collating multiple Visual Odometry feature detectors and descriptors.
