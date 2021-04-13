@@ -27,6 +27,7 @@ Once installed, there are two steps to generate the Visual Odometry (VO) results
 
 ### Running the VO for multiple Detector and Descriptor Combinations
 **1.** Create the descriptor and detector configurations in the `test_configs` dictionary present in `pyslam/feature_tracker_configs.py` 
+
 **2.** Run VO experiment over all the trajectory sequences by:
 ```
 $ cd src
@@ -48,6 +49,7 @@ The ouput will be dumped into the `data/results` folder with the following direc
 
 ### Evaluating the VO for multiple Detector and Descriptor Combinations
 **1.** Install the [evo](https://github.com/MichaelGrupp/evo) package for evaluating Visual Odometery
+
 **2.** Run the evaluation using the evo package by running the following:
 ```
 $ cd src
@@ -56,7 +58,7 @@ $ python eval_vo.py
 This will calculate the  Average Trajectory Error (ATE) and Releative Pose Error (RPE) for all the configurations & trajectory sequences. The results can be found in `data/output` folder
 
 
-**3. **Collate the ATE and RPE into a table by running the following:
+**3.** Collate the ATE and RPE into a table by running the following:
 ```
 $ cd src
 $ python generate_results.py
